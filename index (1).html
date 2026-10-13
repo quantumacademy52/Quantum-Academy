@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quantum Academy | Robotics academy, Karachi</title>
+<meta name="description" content="Quantum Academy is a robotics academy in Karachi offering robotics classes and educational activities in partnership with schools.">
+<meta name="theme-color" content="#184393">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Brand colours scanned from the client logo: blue #184393, yellow #F6C814, white. Deep blue and ink are shades derived from the logo blue. */
+:root{--blue:#184393;--blue-rgb:24,67,147;--blue-deep:#0C234C;--yellow:#F6C814;--paper:#FFFFFF;--ink:#0B1528;--muted:#4A5878;--rule:rgba(var(--blue-rgb),.2);--head:var(--blue);--accent:var(--blue);--tb:rgba(255,255,255,.4);--on-blue:rgba(255,255,255,.82);--display:'IBM Plex Sans Condensed','Arial Narrow',system-ui,sans-serif;--text:'IBM Plex Sans',system-ui,sans-serif;--gutter:clamp(1.25rem,4vw,3rem)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{font:400 1.0625rem/1.65 var(--text);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}a{color:inherit}ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.hero :focus-visible,.sec--dark :focus-visible{outline-color:var(--yellow)}
+.wrap{width:min(100% - 2*var(--gutter),72rem);margin-inline:auto}
+.draftbar{padding:.4rem var(--gutter);background:var(--yellow);font-size:.85rem;font-weight:500}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:3px solid var(--yellow);backdrop-filter:blur(8px);color:var(--ink)}
+.nav-in{display:flex;align-items:center;gap:2rem;min-height:4rem;padding-block:.5rem}
+.brand{font:600 1.25rem var(--display);color:var(--blue);text-decoration:none;white-space:nowrap}.brand img{height:2.75rem;width:auto}
+.nav ul{display:flex;gap:1.25rem;min-width:0;margin-left:auto;overflow-x:auto;scrollbar-width:none;font-size:.9rem}
+.nav li{flex:none}.nav ul a{display:block;padding:.5rem 0;color:var(--muted);text-decoration:none}
+.nav ul a:hover{color:var(--blue);box-shadow:inset 0 -2px var(--blue)}
+.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:var(--blue);padding-top:clamp(4rem,12vw,9rem)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px) 0 0/48px 48px;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent);animation:fade 1.6s ease-out both}
+.hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.3}
+.hero-in{display:flex;flex-direction:column;gap:2rem}
+.hero h1{max-width:13em;font:600 clamp(2.75rem,9vw,7rem)/.95 var(--display);letter-spacing:-.015em}
+.w-wrap{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-right:.22em}
+.w{display:inline-block;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*90ms + 150ms)}
+.hero-sum{max-width:36ch;font-size:clamp(1.1rem,2vw,1.35rem);color:var(--on-blue)}
+.block{display:flex;flex-wrap:wrap;margin-top:clamp(2.5rem,7vw,5rem);border-left:1px solid var(--tb)}
+.block>div{flex:1 1 11rem;padding:.9rem 1.1rem;border-top:1px solid var(--tb);border-right:1px solid var(--tb);background:rgba(0,0,0,.16)}
+.block dt{font-size:.85rem;color:var(--on-blue)}.block dd{font:500 1.2rem var(--display)}.block .block-name dd{color:var(--yellow)}
+@keyframes fade{from{opacity:0}}@keyframes rise{to{transform:none}}
+.sec{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--rule)}
+.sec--dark{--ink:#fff;--head:#fff;--muted:var(--on-blue);--rule:rgba(255,255,255,.28);--accent:var(--yellow);background:var(--blue);color:var(--ink);border-top:0}
+.sec-grid{display:grid;gap:2rem}
+.sec-head h2{font:600 clamp(1.75rem,3vw,2.4rem)/1.05 var(--display)}.sec-head p{margin-top:.75rem;font-size:.95rem;color:var(--muted)}
+@media(min-width:56rem){.sec-grid{grid-template-columns:15rem 1fr;gap:4rem}.sec-head{position:sticky;top:5rem;align-self:start}}
+h2,h3{color:var(--head)}h3{font:600 1.35rem/1.15 var(--display)}.lead{max-width:40rem;font-size:1.35rem;line-height:1.5}.sub{margin-top:2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}.chips li{padding:.4rem .9rem;border:1px solid var(--blue);color:var(--blue);font-weight:500}
+.cards{display:grid;gap:2.5rem 2rem;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr))}
+.card,.locs li{padding-top:1rem;border-top:2px solid var(--blue)}
+.card p,.locs p,.team p{margin-top:.5rem;color:var(--muted)}
+.card img,.card video,.locs img,.locs video,.team img{width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--rule);margin-bottom:1rem}
+.team img{aspect-ratio:4/5}
+.card blockquote{margin-top:1rem;padding-left:1rem;border-left:3px solid var(--yellow);font:500 1.15rem/1.35 var(--display)}
+.card cite{display:block;margin-top:.35rem;font:400 .9rem var(--text);font-style:normal;color:var(--muted)}
+.meta{margin-top:1rem;font-size:.92rem}.meta div{display:grid;grid-template-columns:7rem 1fr;gap:.5rem;padding-block:.4rem;border-top:1px solid var(--rule)}.meta dt{color:var(--muted)}
+.ticks{margin-top:1rem;font-size:.95rem}.ticks li{position:relative;padding:.3rem 0 .3rem 1.25rem}.ticks li::before{content:"";position:absolute;left:0;top:1em;width:.6rem;height:2px;background:var(--accent)}
+.timeline li{display:grid;gap:.5rem 2rem;padding-block:1.75rem;border-top:1px solid var(--rule)}
+@media(min-width:40rem){.timeline li{grid-template-columns:7rem 1fr}}
+.timeline time{font:500 1.5rem var(--display);color:var(--accent)}.timeline .result{margin-top:.5rem;font-weight:600}.timeline p{margin-top:.5rem}
+.timeline img,.timeline video{width:100%;max-width:34rem;aspect-ratio:3/2;object-fit:cover;margin-top:1rem}
+.team{display:grid;gap:2rem;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr))}.team .role{color:var(--accent);font-weight:500}
+.gallery{columns:3 14rem;column-gap:1rem}.gallery li{break-inside:avoid;margin-bottom:1rem}.gallery img,.gallery video{width:100%;height:auto}.gallery p{margin-top:.35rem;font-size:.85rem;color:var(--muted)}
+.locs{display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));margin-bottom:3rem}
+.btn{display:inline-block;margin-top:1rem;padding:.65rem 1.1rem;background:var(--yellow);color:var(--ink);font-weight:600;text-decoration:none}.btn:hover{background:var(--blue);color:#fff}
+.contact div{display:grid;grid-template-columns:8rem 1fr;padding-block:.8rem;border-top:1px solid var(--rule)}.contact dd{font:500 1.25rem var(--display)}
+.foot{padding-block:2rem;background:var(--blue-deep);color:var(--on-blue);font-size:.9rem}
+.igtest{display:block;width:100%;max-width:540px;height:760px;border:0}
+.todo,.note{padding:1.25rem;border:2px dashed #C77F00;color:var(--muted);font-size:.95rem}[data-unverified]{outline:2px dashed #C77F00;outline-offset:6px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero::before,.w{animation:none}.w{transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Sections"><div class="wrap nav-in"><a class="brand" id="brand" href="#top"></a><ul id="links"></ul></div></nav>
+<main id="main"></main>
+<footer class="foot"><div class="wrap" id="foot"></div></footer>
+<script>
+/* ================= EDIT HERE: all content lives in CONTENT =================
+   Add only facts the client has confirmed. Empty sections are hidden on the live site.
+   Items with verified:false are hidden live too. Open index.html?draft to see everything.
+   Media = Cloudinary public IDs (e.g. "quantum-academy/gallery/lego-01"). */
+const CLOUD = 'injxvtcu'; // Cloudinary cloud name
+
+const CONTENT = {
+  name: 'Quantum Academy',
+  tagline: 'Karachi’s Leading Robotics Academy', // Instagram positioning. Owner to confirm as headline claim.
+  summary: 'Robotics, Artificial Intelligence and STEM education in Karachi, with hands-on learning, competition preparation and school partnerships.', // from the owner's official introduction
+  city: 'Karachi, Pakistan',
+  logo: 'Quantum_Academy_new_logo', heroImage: '',
+  stats: [], // { label: 'Students trained', value: '...' } once confirmed
+  about: {
+    story: 'Quantum Academy is an innovative educational organization based in Karachi, Pakistan, dedicated to empowering students with practical skills in Robotics, Artificial Intelligence (AI), STEM education, and emerging technologies.',
+    founded: '', founder: '', // owner says led by, so confirm founder and year before filling
+    vision: 'To become a leading provider of Robotics, AI, and STEM education, nurturing a generation of creative thinkers and technology innovators.',
+    mission: 'To deliver quality, practical, and future-focused technology education that equips students with the knowledge, skills, and confidence to succeed in an increasingly technology-driven world.',
+    differentiators: []
+  },
+  teach: {
+    expertise: [ // the owner's core services list
+      'Robotics and AI training',
+      'LEGO Education and hands-on STEM activities',
+      'Coding and programming workshops',
+      'Electronics and science-based projects',
+      'Robotics competition preparation',
+      'Robotics and AI curriculum development',
+      'School partnerships and teacher/student training',
+      'Technology workshops, camps, and educational events'
+    ],
+    programs: []   // { title, description, age, duration, certificate, features: [], image }
+  },
+  record: [ // owner's wording; confirm which bodies and what role before presenting
+    { year: '2024', title: 'Computer Science curriculum panel', description: 'Participated in curriculum panel activities.' },
+    { year: '2026', title: 'Aga Khan Board Examination panel', description: 'Participated in the examination panel.' }
+  ],   // { year, title, result, description, image | video } awards, competitions, events, milestones
+  partners: [], // { title: 'School name', type, programs, description, quote, quoteBy, image }
+  projects: [], // { title, description, features: [], image | video }
+  team: [ // add photo and bio when supplied
+    { name: 'Hussain Zoaib Quetta Wala', role: 'Leads Quantum Academy', qualifications: 'Robotics and AI educator with 10 years of experience' }
+  ],     // { name, role, qualifications, bio, photo }
+  gallery: [],  // { image | video, caption }
+  locations: [
+    { name: 'Northwalk Mall', address: 'Northwalk Mall, Karachi', mapsUrl: 'https://share.google/qAvpNnxpPPwLflXRV',
+      facilities: [], /* phone, hours, image to add */ },
+    { name: 'Burhani Arcade', verified: false } // Instagram mention only. Hidden until an address is confirmed.
+  ],
+  contact: { phone: '0321 2901870', whatsapp: '', email: 'quantumacademy52@gmail.com', instagram: 'quantum_academy52', facebook: '' }
+};
+/* ========================================================================== */
+
+const C = CONTENT, $ = (s) => document.querySelector(s);
+const draft = ['localhost', '127.0.0.1'].includes(location.hostname) || new URLSearchParams(location.search).has('draft');
+const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const live = (a = []) => (draft ? a : a.filter((i) => i.verified !== false));
+const flag = (i) => (i.verified === false ? ' data-unverified' : '');
+const tel = (v) => `tel:${v.replace(/\s/g, '')}`;
+
+const base = (t) => `https://res.cloudinary.com/${CLOUD}/${t}/upload`;
+const IMG = (id, w) => `${base('image')}/f_auto,q_auto,c_limit,w_${w}/${id}`;
+const NOTE = '<div class="note">Set CLOUD at the top of the script to load media.</div>';
+const img = (id, alt = '', sizes = '(min-width:900px) 50vw,100vw', eager = false) =>
+  !id ? '' : !CLOUD ? NOTE :
+  `<img src="${IMG(id, 1200)}" srcset="${[480, 800, 1200, 1800].map((w) => `${IMG(id, w)} ${w}w`).join(',')}" sizes="${sizes}" alt="${esc(alt)}" loading="${eager ? 'eager' : 'lazy'}" decoding="async"${eager ? ' fetchpriority="high"' : ''}>`;
+const vid = (id, label = '') =>
+  !id ? '' : !CLOUD ? NOTE :
+  `<video controls playsinline preload="none" poster="${base('video')}/so_0,f_jpg,q_auto,c_limit,w_1280/${esc(id)}.jpg" data-vid="${esc(id)}" aria-label="${esc(label)}"></video>`;
+const media = (i, sizes) => (i.video ? vid(i.video, i.title || i.caption) : img(i.image, i.alt || i.title || i.caption, sizes));
+const list = (a, cls = 'ticks') => (a && a.length ? `<ul class="${cls}">${a.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
+const facts = (rows) => {
+  const r = rows.filter(([, v]) => v);
+  return r.length ? `<dl class="meta">${r.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : '';
+};
+
+const about = (a) => `${a.story ? `<p class="lead">${esc(a.story)}</p>` : ''}${facts([['Founded', a.founded], ['Founder', a.founder], ['Vision', a.vision], ['Mission', a.mission]])}${a.differentiators.length ? `<h3 class="sub">What makes us different</h3>${list(a.differentiators)}` : ''}`;
+const cards = (items) => `<ul class="cards">${items.map((i) => `<li class="card"${flag(i)}>${media(i)}<h3>${esc(i.title)}</h3>${i.description ? `<p>${esc(i.description)}</p>` : ''}${facts([['Age group', i.age], ['Duration', i.duration], ['Certificate', i.certificate], ['Partnership', i.type], ['Programs run', i.programs]])}${list(i.features)}${i.quote ? `<blockquote>${esc(i.quote)}<cite>${esc(i.quoteBy || '')}</cite></blockquote>` : ''}</li>`).join('')}</ul>`;
+const teach = (t) => `${list(t.expertise, 'chips')}${live(t.programs).length ? cards(live(t.programs)) : ''}`;
+const timeline = (items) => `<ol class="timeline">${items.map((i) => `<li${flag(i)}><time>${esc(i.year || '')}</time><div><h3>${esc(i.title)}</h3>${i.result ? `<p class="result">${esc(i.result)}</p>` : ''}${i.description ? `<p>${esc(i.description)}</p>` : ''}${media(i, '(min-width:900px) 40vw,100vw')}</div></li>`).join('')}</ol>`;
+const team = (items) => `<ul class="team">${items.map((p) => `<li${flag(p)}>${img(p.photo, p.name, '(min-width:900px) 25vw,50vw')}<h3>${esc(p.name)}</h3><p class="role">${esc(p.role)}</p>${p.qualifications ? `<p>${esc(p.qualifications)}</p>` : ''}${p.bio ? `<p>${esc(p.bio)}</p>` : ''}</li>`).join('')}</ul>`;
+const gallery = (items) => `<ul class="gallery">${items.map((g) => `<li${flag(g)}>${media(g, '(min-width:900px) 33vw,50vw')}${g.caption ? `<p>${esc(g.caption)}</p>` : ''}</li>`).join('')}</ul>`;
+const visit = (locs, c) => {
+  const rows = [['Phone', c.phone, c.phone && tel(c.phone)], ['WhatsApp', c.whatsapp, `https://wa.me/${(c.whatsapp || '').replace(/\D/g, '').replace(/^0/, '92')}`], ['Email', c.email, `mailto:${c.email}`], ['Instagram', c.instagram && '@' + c.instagram, `https://instagram.com/${c.instagram}`], ['Facebook', c.facebook, c.facebook]].filter(([, v]) => v);
+  const places = locs.length ? `<ul class="locs">${locs.map((l) => `<li${flag(l)}>${media(l)}<h3>${esc(l.name)}</h3>${l.address ? `<p>${esc(l.address)}</p>` : ''}${l.hours ? `<p>${esc(l.hours)}</p>` : ''}${l.phone ? `<p><a href="${tel(l.phone)}">${esc(l.phone)}</a></p>` : ''}${list(l.facilities)}${l.mapsUrl ? `<a class="btn" href="${esc(l.mapsUrl)}" target="_blank" rel="noreferrer">View on Google</a>` : ''}</li>`).join('')}</ul>` : '';
+  return `${places}<dl class="contact">${rows.map(([k, v, h]) => `<div><dt>${k}</dt><dd><a href="${esc(h)}" target="_blank" rel="noreferrer">${esc(v)}</a></dd></div>`).join('')}</dl>`;
+};
+
+// Page order = order of this array. `has` decides whether a section appears on the live site.
+const SECTIONS = [
+  // TEMPORARY test of an Instagram embed. Delete this whole entry (and the .igtest CSS rule) when done.
+  { id: 'test', title: 'Instagram embed test', label: 'Test', intro: 'Temporary check. Delete when done.', has: true,
+    html: () => `<iframe class="igtest" src="https://www.instagram.com/p/DaIOCNSsMLm/embed" title="Instagram post" loading="lazy" allowfullscreen></iframe><p><a class="btn" href="https://www.instagram.com/p/DaIOCNSsMLm/" target="_blank" rel="noreferrer">Open on Instagram</a></p>` },
+  { id: 'about', title: 'About Quantum Academy', label: 'About', has: Object.values(C.about).some((v) => (Array.isArray(v) ? v.length : v)), html: () => about(C.about) },
+  { id: 'teach', title: 'Core services', label: 'Services', has: C.teach.expertise.length + live(C.teach.programs).length, html: () => teach(C.teach) },
+  { id: 'record', title: 'Track record', has: live(C.record).length, html: () => timeline(live(C.record)), dark: true },
+  { id: 'partners', title: 'School partnerships', label: 'Partners', has: live(C.partners).length, html: () => cards(live(C.partners)) },
+  { id: 'projects', title: 'Projects', has: live(C.projects).length, html: () => cards(live(C.projects)) },
+  { id: 'team', title: 'Team', has: live(C.team).length, html: () => team(live(C.team)) },
+  { id: 'gallery', title: 'Gallery', has: live(C.gallery).length, html: () => gallery(live(C.gallery)) },
+  { id: 'visit', title: 'Locations and contact', label: 'Contact', has: true, html: () => visit(live(C.locations), C.contact) }
+];
+
+const cells = [['Based in', C.city], ['Instagram', C.contact.instagram && '@' + C.contact.instagram], ...C.stats.map((s) => [s.label, s.value])].filter(([, v]) => v);
+const hero = `<section class="hero" id="top">${C.heroImage ? img(C.heroImage, '', '100vw', true).replace('<img ', '<img class="hero-bg" ') : ''}<div class="wrap hero-in"><h1 aria-label="${esc(C.tagline)}">${C.tagline.split(' ').map((w, i) => `<span class="w-wrap" aria-hidden="true"><span class="w" style="--i:${i}">${esc(w)}</span></span>`).join('')}</h1><p class="hero-sum">${esc(C.summary)}</p><dl class="block"><div class="block-name"><dt>Academy</dt><dd>${esc(C.name)}</dd></div>${cells.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></div></section>`;
+
+const shown = SECTIONS.filter((s) => draft || s.has);
+$('#main').innerHTML = hero + shown.map((s) => `<section id="${s.id}" class="sec${s.dark ? ' sec--dark' : ''}"><div class="wrap sec-grid"><header class="sec-head"><h2>${s.title}</h2>${s.intro ? `<p>${s.intro}</p>` : ''}</header><div>${s.has ? s.html() : `<p class="todo">Nothing here yet. Add confirmed content to CONTENT.${s.id === 'visit' ? 'locations' : s.id}. Hidden on the live site until then.</p>`}</div></div></section>`).join('');
+const logoUrl = (w) => `${base('image')}/e_trim:10/f_auto,q_auto,c_limit,w_${w}/${C.logo}`; // trims the empty margin around the logo
+$('#brand').innerHTML = C.logo && CLOUD
+  ? `<img src="${logoUrl(480)}" srcset="${logoUrl(480)} 1x, ${logoUrl(960)} 2x" alt="${esc(C.name)}" onerror="this.onerror=null;this.srcset='';this.src='${base('image')}/${C.logo}'">`
+  : esc(C.name);
+$('#links').innerHTML = shown.map((s) => `<li><a href="#${s.id}">${s.label || s.title}</a></li>`).join('');
+$('#foot').textContent = `${C.name}, Karachi`;
+if (draft) document.body.insertAdjacentHTML('afterbegin', '<p class="draftbar">Draft view. Dashed items are hidden on the live site.</p>');
+
+// Videos fetch their files only when they near the viewport; until then only the poster loads.
+const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (!e.isIntersecting) return;
+  const v = e.target, id = v.dataset.vid;
+  v.preload = 'metadata';
+  v.innerHTML = ['webm', 'mp4'].map((x) => `<source src="${base('video')}/q_auto,c_limit,w_1280/${id}.${x}" type="video/${x}">`).join('');
+  v.load();
+  io.unobserve(v);
+}), { rootMargin: '300px' });
+document.querySelectorAll('video[data-vid]').forEach((v) => io.observe(v));
+</script>
+</body>
+</html>
