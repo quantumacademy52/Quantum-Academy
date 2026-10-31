@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Quantum Academy | Robotics academy, Karachi</title>
 <meta name="description" content="Quantum Academy is a robotics academy in Karachi offering robotics, AI and STEM classes, competition preparation and school partnerships.">
 <meta name="theme-color" content="#184393">
@@ -10,10 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
 <style>
 /* Brand: logo blue #184393, logo yellow #F6C814. Deep and sky are shades of the logo blue. */
-:root{--blue:#184393;--deep:#0A1F4A;--sky:#E9EFFB;--yellow:#F6C814;--ink:#0D1730;--muted:#55627F;--on:#C9D6F2;--line:#DAE3F5;--f:'Bricolage Grotesque',system-ui,sans-serif;--g:clamp(1.25rem,5vw,3.5rem)}
+:root{--ig:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);--blue:#184393;--deep:#0A1F4A;--sky:#E9EFFB;--yellow:#F6C814;--ink:#0D1730;--muted:#55627F;--on:#C9D6F2;--line:#DAE3F5;--f:'Bricolage Grotesque',system-ui,sans-serif;--g:clamp(1.25rem,5vw,3.5rem)}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:5rem}
-body{font:400 1.0625rem/1.6 var(--f);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;overflow-x:hidden;overscroll-behavior:none;touch-action:pan-y;-webkit-text-size-adjust:100%}
+body{font:400 1.0625rem/1.6 var(--f);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:clip;touch-action:pan-y}
 img,svg{display:block;max-width:100%}a{color:inherit}ul,ol{padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:4px}
 .sec:not(.dark):not(.close) :focus-visible{outline-color:var(--blue)}
@@ -30,8 +30,8 @@ img,svg{display:block;max-width:100%}a{color:inherit}ul,ol{padding:0;list-style:
 .nav .btn{margin-left:auto;padding:.55rem 1.1rem;font-size:.95rem}
 @media(min-width:56rem){.nav ul{display:flex}.nav .btn{margin-left:0}}
 
-.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:var(--deep)}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px) 0 0/48px 48px,radial-gradient(55% 75% at 76% 45%,rgba(24,67,147,.95),transparent)}
+.hero{position:relative;isolation:isolate;overflow:hidden;overflow:clip;color:#fff;background:var(--deep)}
+
 .top{display:grid;gap:1rem;align-items:center;padding-block:clamp(2.5rem,6vw,4.5rem) 2rem}
 @media(min-width:60rem){.top{grid-template-columns:1.05fr .95fr}}
 h1{font:800 clamp(2.9rem,7.4vw,6rem)/.94 var(--f);font-stretch:82%;letter-spacing:-.03em}
@@ -76,7 +76,7 @@ h3{font:700 1.3rem/1.2 var(--f);color:var(--blue)}
 .dark{background:var(--blue);color:#fff}.dark h2,.close h2{color:#fff}
 .rec{display:grid;gap:3.5rem;margin-top:3rem}
 @media(min-width:60rem){.rec{grid-template-columns:1fr 1fr;gap:5rem}}
-.cert{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding-block:1.75rem;border-top:1px solid rgba(255,255,255,.3)}
+.cert{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:1rem;padding-block:1.75rem;border-top:1px solid rgba(255,255,255,.3)}
 .cert time{font:800 2rem/1 var(--f);color:var(--yellow)}.dark h3{color:#fff}.cert p{margin-top:.4rem;color:var(--on);font-size:.98rem}
 .who{align-self:start;padding:2rem;border-radius:1.5rem;background:var(--deep)}
 .mono{display:grid;place-items:center;width:4.5rem;height:4.5rem;margin-bottom:1.25rem;border-radius:50%;background:var(--yellow);color:var(--ink);font:800 1.5rem var(--f)}
@@ -101,10 +101,69 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 .visit{display:grid;gap:3rem;align-items:center}
 @media(min-width:60rem){.visit{grid-template-columns:1fr 1.1fr;gap:5rem}}
 .close .lede{max-width:34ch;margin-top:1.25rem;color:var(--on);font-size:1.2rem;line-height:1.5}
-.rows{margin-top:2.25rem}.rows div{display:grid;grid-template-columns:7rem 1fr;padding-block:.85rem;border-top:1px solid rgba(255,255,255,.2)}
-.rows dt{color:var(--on)}.rows dd{font-weight:600;font-size:1.15rem}
+.rows{margin-top:2.25rem}.rows div{display:grid;grid-template-columns:7rem minmax(0,1fr);padding-block:.85rem;border-top:1px solid rgba(255,255,255,.2)}
+.rows dt{color:var(--on)}.rows dd{font-weight:600;font-size:1.15rem;overflow-wrap:anywhere}
 .visit iframe{width:100%;aspect-ratio:4/3;border:0;border-radius:1.5rem;background:var(--blue)}
 .foot{padding-block:1.75rem;background:#07163A;color:var(--on);font-size:.9rem}.foot .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+.top>*,.about>*,.rec>*,.visit>*,.igs>*{min-width:0}
+.g{width:1.4rem;height:1.4rem;flex:none}
+.av{display:block;flex:none;width:3rem;height:3rem;padding:3px;border-radius:50%;background:var(--ig)}
+.in{position:relative;display:grid;place-items:center;width:100%;height:100%;border:2px solid #fff;border-radius:50%;overflow:hidden;background:#fff;color:var(--blue);font:800 .9rem var(--f)}
+.in img{position:absolute;inset:0;width:100%;height:100%;padding:.15rem;object-fit:contain;background:#fff}
+.gb{display:grid;place-items:center;flex:none;width:2.25rem;height:2.25rem;border-radius:.7rem;background:var(--ig);color:#fff}
+.pinned{position:fixed;left:1rem;bottom:1rem;z-index:8;display:flex;align-items:center;gap:.7rem;max-width:calc(100vw - 6.5rem);padding:.35rem .5rem .35rem .35rem;border-radius:99px;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 10px 30px rgba(10,31,74,.3);transition:opacity .3s,transform .3s}
+.pinned.off{opacity:0;pointer-events:none;transform:translateY(1rem)}
+.tx{min-width:0}.tx b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.95rem;line-height:1.15}.tx small{display:block;font-size:.78rem;line-height:1.2;color:var(--muted)}
+.igw,.map{position:relative}.igw{width:100%;max-width:540px;justify-self:center}
+.igw iframe,.map iframe{display:block;pointer-events:none}
+.over{position:absolute;inset:0;border-radius:1.5rem}
+.vp{overflow:hidden;overflow:clip;touch-action:pan-y}
+.slides{display:flex;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.slide{position:relative;isolation:isolate;flex:0 0 100%;min-width:0;display:flex;align-items:center}
+.slide .top{min-height:clamp(30rem,70vh,38rem)}
+.slide+.slide::before{content:"";position:absolute;z-index:-1;top:50%;right:-6%;width:min(62vw,44rem);aspect-ratio:1;translate:0 -50%;border-radius:50%;background:var(--blue)}
+.slide.m::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,31,74,.92),rgba(10,31,74,.4))}
+.bgm{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover}
+.sh{font:800 clamp(2.2rem,5.6vw,4.4rem)/1 var(--f);font-stretch:82%;letter-spacing:-.03em;color:#fff;max-width:16ch}
+.chips{display:grid;gap:.9rem;align-content:center}
+.chips li{display:flex;align-items:center;gap:.9rem;padding:1.1rem 1.4rem;border-radius:1.1rem;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);font:600 clamp(1.05rem,2vw,1.35rem)/1.25 var(--f)}
+.chips li::before{content:"";flex:none;width:.7rem;height:.7rem;border-radius:50%;background:var(--yellow)}
+.slide.on .chips li{animation:pop .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--n)*.12s + .25s)}
+@keyframes pop{from{opacity:0;transform:translateX(2rem)}}
+.ctl{display:flex;align-items:center;gap:.75rem;padding-bottom:.5rem}
+.dots{display:flex;gap:.5rem;margin-right:auto}
+.dots button{position:relative;width:.7rem;height:.7rem;padding:0;border:0;border-radius:99px;background:rgba(255,255,255,.35);cursor:pointer;transition:width .3s,background .3s}
+.dots button::after{content:"";position:absolute;inset:-.7rem -.2rem}.dots .on{width:2.2rem;background:var(--yellow)}
+.arr{display:grid;place-items:center;flex:none;width:2.75rem;height:2.75rem;padding:0 0 .15rem;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font:600 1.5rem/1 var(--f);cursor:pointer;transition:background .2s}
+.arr:hover{background:rgba(255,255,255,.26)}.arr.dk{background:var(--blue)}.arr.dk:hover{background:var(--deep)}
+.tick{padding-block:1.1rem;overflow:hidden;border-bottom:1px solid var(--line)}
+.tl{margin-bottom:.6rem;font-size:.85rem;color:var(--muted)}
+.tk{display:flex;width:max-content;animation:mq 45s linear infinite}
+.tk span{display:flex;align-items:center;gap:2.5rem;padding-right:2.5rem;font:700 1.2rem var(--f);color:var(--blue);white-space:nowrap}
+.tk span::after{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--yellow)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.why{display:grid;margin-top:3rem}
+.why li{padding:1.75rem 0;border-top:1px solid var(--line)}
+.why svg{width:3.25rem;height:3.25rem;padding:.8rem;margin-bottom:1.1rem;border-radius:50%;background:var(--sky);color:var(--blue);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.why p{margin-top:.5rem;color:var(--muted)}
+@media(min-width:48rem){.why{grid-template-columns:repeat(2,minmax(0,1fr))}.why li{padding-right:2rem}}
+@media(min-width:64rem){.why{grid-template-columns:repeat(4,minmax(0,1fr))}.why li{padding:0 1.75rem;border-top:0;border-left:1px solid var(--line)}.why li:first-child{padding-left:0;border-left:0}}
+.rh{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem}.ra{display:flex;gap:.5rem}
+.rail{display:flex;gap:1rem;margin-top:2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}.rail::-webkit-scrollbar{display:none}
+.mc{flex:0 0 min(82%,28rem);scroll-snap-align:start}
+.mc video,.mc img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:1.25rem;background:var(--deep)}
+.mc figcaption{margin-top:.7rem;font-weight:600;color:var(--blue)}
+.wa{position:fixed;right:1rem;bottom:1rem;z-index:8;display:grid;place-items:center;width:3.4rem;height:3.4rem;border-radius:50%;background:#25D366;box-shadow:0 10px 30px rgba(10,31,74,.3)}.wa svg{width:1.7rem;height:1.7rem}
+.fl{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}
+.tq{position:relative;flex:0 0 min(86%,26rem);scroll-snap-align:start;display:flex;flex-direction:column;gap:1rem;padding:1.75rem;border-radius:1.5rem;background:#fff}
+.tq::before{content:"\201C";font:800 4rem/.8 var(--f);color:var(--yellow)}
+.tq blockquote{font:500 1.2rem/1.45 var(--f)}
+.tq figcaption{margin-top:auto;padding-top:.5rem;color:var(--muted);font-size:.95rem}.tq figcaption b{display:block;color:var(--blue);font-size:1.05rem}
+.press{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:1rem;margin-top:2.5rem}
+.press li>*{position:relative;display:grid;place-items:center;height:5.5rem;padding:1rem;border-radius:1rem;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted);font-weight:700;text-align:center;text-decoration:none}
+.press img{max-width:100%;max-height:3rem;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .2s,opacity .2s}.press a:hover img{filter:none;opacity:1}
+.ph{position:relative;display:grid;place-items:center;aspect-ratio:16/10;border-radius:1.25rem;background:var(--sky);color:var(--muted);font-weight:600}
+.smp{position:absolute;top:.6rem;right:.6rem;padding:.15rem .6rem;border-radius:99px;background:var(--yellow);color:var(--ink);font:700 .72rem var(--f);font-style:normal}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}h1 i{transform:none}.c{opacity:1}}
 </style>
 </head>
@@ -113,6 +172,7 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 <nav class="nav" aria-label="Sections"><div class="w"><a class="brand" id="brand" href="#top">Quantum Academy</a><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#record">Track record</a></li><li><a href="#schools">Schools</a></li></ul><a class="btn" href="#contact">Contact</a><a class="igl" href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer" aria-label="Quantum Academy on Instagram"><svg aria-hidden="true"><use href="#ig"/></svg></a></div></nav>
 
 <header class="hero" id="top">
+<div class="vp"><div class="slides" id="slides"><section class="slide on">
 <div class="w top">
 <div>
 <h1 aria-label="Karachi’s Leading Robotics Academy"><span aria-hidden="true"><i style="--i:0">Karachi’s</i></span><span aria-hidden="true"><i style="--i:1">Leading</i></span><span aria-hidden="true"><i style="--i:2">Robotics</i></span><span aria-hidden="true"><i style="--i:3">Academy</i></span></h1>
@@ -120,6 +180,7 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 <div class="cta"><a class="btn" href="#contact">Bring robotics to your school</a><a class="btn ghost" href="#schools">See our schools</a></div>
 </div>
 <svg class="bot" viewBox="0 0 560 520" role="img" aria-label="Illustration of a friendly wheeled robot assembling itself, with labels for its sensors and motors">
+<g class="p" style="--x:0;--y:0;--r:0;--d:0s"><circle cx="240" cy="250" r="190" fill="#184393"/><path d="M205 451A204 204 0 0 1 39 285" fill="none" stroke="#F6C814" stroke-width="9" stroke-linecap="round"/><circle cx="446" cy="128" r="13" fill="#F6C814"/><circle cx="52" cy="104" r="15" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="4"/></g>
 <g class="p" style="--x:0;--y:0;--r:0;--d:1.4s"><ellipse cx="240" cy="494" rx="150" ry="12" fill="rgba(0,0,0,.28)"/></g>
 <g class="p" style="--x:-190px;--y:70px;--r:-70deg;--d:.2s"><rect x="128" y="410" width="92" height="72" rx="36" fill="#F6C814"/><circle cx="174" cy="446" r="13" fill="#0A1F4A"/></g>
 <g class="p" style="--x:190px;--y:70px;--r:70deg;--d:.3s"><rect x="260" y="410" width="92" height="72" rx="36" fill="#F6C814"/><circle cx="306" cy="446" r="13" fill="#0A1F4A"/></g>
@@ -130,6 +191,8 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 <g class="c"><path d="M8 174H122"/><circle cx="124" cy="174" r="4"/><text x="8" y="163">Sensors</text><path d="M358 446H480"/><circle cx="356" cy="446" r="4"/><text x="400" y="435">Motors</text></g>
 </svg>
 </div>
+</section></div></div>
+<div class="w ctl"><div class="dots" id="dots"></div><button class="arr" id="prev" aria-label="Previous slide">‹</button><button class="arr" id="next" aria-label="Next slide">›</button></div>
 <div class="w facts">
 <div><b>2021</b><span>Founded as Mr Robotics</span></div>
 <div><b>11</b><span>Schools served</span></div>
@@ -138,6 +201,18 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 </header>
 
 <main>
+<div class="tick"><p class="tl w">Schools we work with</p><div class="tk" id="tk"></div></div>
+
+<section class="sec" id="why"><div class="w">
+<h2>Why schools choose Quantum Academy</h2>
+<ul class="why">
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12a2 2 0 0 1 2 2v13H7a2 2 0 0 0-2 2zM5 4v17"/></svg><h3>Curriculum for schools</h3><p>Robotics and AI curriculum development for classrooms and school programmes.</p></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.3c3 0 6 1.7 6 5.7"/></svg><h3>Teachers and students</h3><p>Training for teachers and students through school partnerships.</p></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3M12 14v4M8 20h8"/></svg><h3>Competition ready</h3><p>Preparation for robotics competitions, alongside workshops, camps and events.</p></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6zM9 12l2 2 4-4"/></svg><h3>Examination board experience</h3><p>Our lead educator has served the Aga Khan University Examination Board as a panellist and a marker.</p></li>
+</ul>
+</div></section>
+
 <section class="sec alt" id="learn"><div class="w">
 <h2>Learning by building</h2>
 <ol class="steps">
@@ -192,6 +267,16 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 <ul class="ol" id="ol"></ul>
 </div></section>
 
+<section class="sec alt" id="testimonials" hidden><div class="w">
+<div class="rh"><h2>What parents and schools say</h2><div class="ra"><button class="arr dk" data-r="#qr" data-d="-1" aria-label="Previous testimonials">‹</button><button class="arr dk" data-r="#qr" data-d="1" aria-label="Next testimonials">›</button></div></div>
+<div class="rail" id="qr"></div>
+</div></section>
+
+<section class="sec" id="news" hidden><div class="w">
+<h2>In the news</h2>
+<ul class="press" id="press"></ul>
+</div></section>
+
 <section class="sec alt" id="instagram"><div class="w igs">
 <div>
 <h2>Follow us on Instagram</h2>
@@ -199,7 +284,12 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 <a class="handle" href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer"><span class="igb"><svg aria-hidden="true"><use href="#ig"/></svg></span><span>@quantum_academy52<small>Quantum Academy on Instagram</small></span></a>
 <div class="cta"><a class="btn" href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer">Follow on Instagram</a></div>
 </div>
-<iframe class="igf" src="https://www.instagram.com/quantum_academy52/embed/" title="Quantum Academy on Instagram" loading="lazy" allowfullscreen></iframe>
+<div class="igw"><iframe class="igf" src="https://www.instagram.com/quantum_academy52/embed/" title="Quantum Academy on Instagram" loading="lazy" tabindex="-1"></iframe><a class="over" href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer" aria-label="Open Quantum Academy on Instagram"></a></div>
+</div></section>
+
+<section class="sec" id="watch" hidden><div class="w">
+<div class="rh"><h2>See us in action</h2><div class="ra"><button class="arr dk" data-d="-1" aria-label="Previous videos">‹</button><button class="arr dk" data-d="1" aria-label="Next videos">›</button></div></div>
+<div class="rail" id="rail"></div>
 </div></section>
 
 <section class="sec close" id="contact"><div class="w visit">
@@ -214,11 +304,14 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 <div><dt>Instagram</dt><dd><a href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer">@quantum_academy52</a></dd></div>
 </dl>
 </div>
-<iframe src="https://maps.google.com/maps?q=Quantum%20Academy%2C%20North%20Walk%20Mall%2C%20Karachi&z=16&output=embed" title="Map of Quantum Academy at North Walk Mall, Karachi" loading="lazy" allowfullscreen></iframe>
+<div class="map"><iframe src="https://maps.google.com/maps?q=Quantum%20Academy%2C%20North%20Walk%20Mall%2C%20Karachi&z=16&output=embed" title="Map of Quantum Academy at North Walk Mall, Karachi" loading="lazy" tabindex="-1"></iframe><a class="over" href="https://share.google/qAvpNnxpPPwLflXRV" target="_blank" rel="noreferrer" aria-label="Open Quantum Academy on Google Maps"></a></div>
 </div></section>
 </main>
 
-<footer class="foot"><div class="w"><span>Quantum Academy, Karachi</span><a href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer">@quantum_academy52</a></div></footer>
+<footer class="foot"><div class="w"><span>© 2026 Quantum Academy, Karachi</span><nav class="fl" aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#record">Track record</a><a href="#schools">Schools</a><a href="#contact">Contact</a><a href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer">Instagram</a></nav></div></footer>
+
+<a class="pinned" id="pinned" href="https://instagram.com/quantum_academy52" target="_blank" rel="noreferrer" aria-label="Quantum Academy on Instagram, @quantum_academy52"><span class="av"><span class="in">QA</span></span><span class="tx"><b>quantum_academy52</b><small>Follow on Instagram</small></span><span class="gb"><svg class="g" aria-hidden="true"><use href="#ig"/></svg></span></a>
+<a class="wa" href="https://wa.me/923212901870" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.2c-.4.8-.2 2 1 3.4 1.2 1.4 2.5 2 3.4 1.9l1-1-1.6-1-.7.6c-.7-.3-1.4-1-1.7-1.7l.6-.7-.9-1.6z" fill="#fff"/></svg></a>
 
 <script>
 const $ = (s) => document.querySelector(s);
@@ -253,6 +346,74 @@ addEventListener('pointermove', (e) => {
   const r = bot.getBoundingClientRect(), x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height * .33), d = Math.hypot(x, y) || 1, k = Math.min(7, d / 40);
   pu.forEach((p) => { p.style.transform = `translate(${x / d * k}px,${y / d * k}px)`; });
 });
+
+// Pinned Instagram badge: the academy logo is the profile picture (swap AV for the Instagram profile photo URL if you want it identical).
+const AV = L(240);
+document.querySelectorAll('.in').forEach((n) => n.insertAdjacentHTML('beforeend', `<img src="${AV}" alt="" onerror="this.remove()">`));
+const hid = { top: true, ig: false }, pin = () => $('#pinned').classList.toggle('off', hid.top || hid.ig);
+new IntersectionObserver(([e]) => { hid.ig = e.isIntersecting; pin(); }, { threshold: .2 }).observe($('#instagram'));
+addEventListener('scroll', () => { hid.top = scrollY < innerHeight * .6; pin(); }, { passive: true });
+pin();
+// Lock zoom: iOS ignores user-scalable=no, so block its pinch gestures too.
+['gesturestart', 'gesturechange', 'gestureend'].forEach((t) => document.addEventListener(t, (e) => e.preventDefault()));
+
+// ===== Media config. Paste real video or photo URLs here (Cloudinary, mp4, jpg). =====
+// Hero slides: "video" and "img" are optional and become the slide background.
+const SLIDES = [
+  { h: 'Robotics and AI training, built hands-on.', p: 'LEGO Education, coding workshops and electronics projects that turn ideas into working robots.', chips: ['LEGO Education and hands-on STEM activities', 'Coding and programming workshops', 'Electronics and science-based projects'], cta: ['See all services', '#services'], video: '', img: '' },
+  { h: 'A robotics partner for your school.', p: 'Curriculum development, teacher and student training and competition preparation for schools in Karachi.', chips: ['Robotics and AI curriculum development', 'Teacher and student training', 'Robotics competition preparation'], cta: ['Talk to us', '#contact'], video: '', img: '' },
+  { h: 'Recognised by the Aga Khan University Examination Board.', p: 'Our lead educator has served as a panellist (2024) and a marker (2025).', chips: ['Certificate of Recognition, 2024', 'Certificate of Acknowledgement, 2025', '10 years of robotics and AI teaching'], cta: ['See our track record', '#record'], video: '', img: '' }
+];
+// "See us in action" video rail stays hidden until you add items: { title, video, poster }
+const MEDIA = [];
+// Testimonials: { q: 'quote', n: 'Name', r: 'Role, school or city' }
+const QUOTES = [];
+// News coverage: { name: 'Channel or paper', logo: 'https://…', href: 'https://…' }
+const PRESS = [];
+// While true, empty sections show tiles labelled "Sample" so you can review the layout. Set to false before going live.
+const SAMPLES = true;
+
+const sl = $('#slides'), dots = $('#dots');
+sl.insertAdjacentHTML('beforeend', SLIDES.map((s) => `<section class="slide${s.video || s.img ? ' m' : ''}">${s.video ? `<video class="bgm" src="${s.video}" ${s.img ? `poster="${s.img}"` : ''} autoplay muted loop playsinline></video>` : s.img ? `<img class="bgm" src="${s.img}" alt="">` : ''}<div class="w top"><div><h2 class="sh">${s.h}</h2><p class="sum">${s.p}</p><div class="cta"><a class="btn" href="${s.cta[1]}">${s.cta[0]}</a></div></div><ul class="chips">${s.chips.map((c, i) => `<li style="--n:${i}">${c}</li>`).join('')}</ul></div></section>`).join(''));
+const all = [...sl.children];
+dots.innerHTML = all.map((_, i) => `<button aria-label="Slide ${i + 1}"></button>`).join('');
+let cur = 0, timer;
+const go = (i) => {
+  cur = (i + all.length) % all.length;
+  sl.style.transform = `translateX(${-cur * 100}%)`;
+  all.forEach((s, j) => { s.classList.toggle('on', j === cur); s.inert = j !== cur; s.querySelectorAll('video').forEach((v) => j === cur ? v.play()?.catch(() => {}) : v.pause()); });
+  [...dots.children].forEach((d, j) => d.classList.toggle('on', j === cur));
+};
+const stop = () => clearInterval(timer);
+$('#next').onclick = () => { stop(); go(cur + 1); };
+$('#prev').onclick = () => { stop(); go(cur - 1); };
+dots.onclick = (e) => { const i = [...dots.children].indexOf(e.target); if (i > -1) { stop(); go(i); } };
+let x0 = null;
+sl.addEventListener('pointerdown', (e) => { x0 = e.clientX; });
+addEventListener('pointerup', (e) => { if (x0 !== null && Math.abs(e.clientX - x0) > 50) { stop(); go(cur + (e.clientX < x0 ? 1 : -1)); } x0 = null; });
+go(0);
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => go(cur + 1), 7000);
+
+$('#tk').innerHTML = [...P, ...O].map((r) => r[0]).filter((n) => !/Mall|Government/.test(n)).map((n) => `<span>${n}</span>`).join('').repeat(2);
+
+if (MEDIA.length) {
+  $('#watch').hidden = false;
+  $('#rail').innerHTML = MEDIA.map((m) => `<figure class="mc">${m.video ? `<video src="${m.video}" ${m.poster ? `poster="${m.poster}"` : ''} controls playsinline preload="metadata"></video>` : `<img src="${m.poster}" alt="${m.title}" loading="lazy">`}<figcaption>${m.title}</figcaption></figure>`).join('');
+  document.querySelectorAll('.dk').forEach((b) => { b.onclick = () => $('#rail').scrollBy({ left: b.dataset.d * $('#rail').firstElementChild.offsetWidth, behavior: 'smooth' }); });
+}
+
+const tag = (x) => x.s ? '<i class="smp">Sample</i>' : '';
+const Q = QUOTES.length ? QUOTES : SAMPLES ? Array.from({ length: 3 }, () => ({ q: 'Add a short quote from a parent, student or school here.', n: 'Name', r: 'Role, school or city', s: 1 })) : [];
+$('#testimonials').hidden = !Q.length;
+$('#qr').innerHTML = Q.map((x) => `<figure class="tq"><blockquote>${x.q}</blockquote><figcaption><b>${x.n}</b>${x.r}</figcaption>${tag(x)}</figure>`).join('');
+const PR = PRESS.length ? PRESS : SAMPLES ? Array.from({ length: 5 }, () => ({ name: 'News channel logo', s: 1 })) : [];
+$('#news').hidden = !PR.length;
+$('#press').innerHTML = PR.map((x) => `<li>${x.href ? `<a href="${x.href}" target="_blank" rel="noreferrer">` : '<span>'}${x.logo ? `<img src="${x.logo}" alt="${x.name}" loading="lazy">` : x.name}${tag(x)}${x.href ? '</a>' : '</span>'}</li>`).join('');
+if (!MEDIA.length && SAMPLES) {
+  $('#watch').hidden = false;
+  $('#rail').innerHTML = Array.from({ length: 4 }, () => '<figure class="mc"><div class="ph">Event photo or video<i class="smp">Sample</i></div><figcaption>Event name, year</figcaption></figure>').join('');
+}
+document.querySelectorAll('.dk').forEach((b) => { b.onclick = () => { const r = $(b.dataset.r || '#rail'); r.scrollBy({ left: b.dataset.d * r.firstElementChild.offsetWidth, behavior: 'smooth' }); }; });
 </script>
 </body>
 </html>
