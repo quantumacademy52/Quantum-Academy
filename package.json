@@ -1,0 +1,16 @@
+{
+  "name": "quantum-academy",
+  "version": "1.0.0",
+  "description": "Quantum Academy - Robotics academy in Karachi",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["robotics", "academy", "education"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}
