@@ -129,12 +129,18 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 .nmeta .ch img{flex:none;height:3.75rem;width:auto}
 .nmeta h3{font:700 clamp(1.4rem,3vw,2rem)/1.15 var(--f);color:var(--blue)}
 .nmeta p{margin-top:.75rem;color:var(--muted)}
+.vids{display:grid;gap:1.5rem;margin-top:3rem}
+@media(min-width:60rem){.vids{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vid .yt{border-radius:1.25rem;overflow:hidden}
+.vid figcaption{padding:.9rem .25rem 0;color:var(--on);font-weight:600}
+.vid .yt-btn{width:3.75rem;height:3.75rem;margin:-1.875rem 0 0 -1.875rem}
+.vid .yt-btn svg{width:1.6rem;height:1.6rem}
 .foot{padding-block:1.75rem;background:#07163A;color:var(--on);font-size:.9rem}.foot .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}h1 i{transform:none}}
 </style>
 </head>
 <body>
-<nav class="nav" aria-label="Sections"><div class="w"><a class="brand" id="brand" href="#top">Quantum Academy</a><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#record">Track record</a></li><li><a href="#news">In the news</a></li><li><a href="#schools">Schools</a></li></ul><a class="btn" href="#contact">Contact</a></div></nav>
+<nav class="nav" aria-label="Sections"><div class="w"><a class="brand" id="brand" href="#top">Quantum Academy</a><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#record">Track record</a></li><li><a href="#news">In the news</a></li><li><a href="#videos">Videos</a></li><li><a href="#schools">Schools</a></li></ul><a class="btn" href="#contact">Contact</a></div></nav>
 
 <header class="hero" id="top">
 <div class="w top">
@@ -227,6 +233,11 @@ li small{font:400 .95rem var(--f);color:var(--muted)}
 </div>
 </div></section>
 
+<section class="sec dark" id="videos"><div class="w">
+<h2>Watch Quantum Academy</h2>
+<div class="vids" id="vids"></div>
+</div></section>
+
 <section class="sec" id="schools"><div class="w">
 <h2>Schools and partners</h2>
 <h3 class="sub">Institutional partnerships</h3>
@@ -315,6 +326,21 @@ if (/^https?:$/.test(location.protocol)) {
     e.preventDefault();
     $('#yt').innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/To7g_MVUhlE?autoplay=1&amp;rel=0&amp;playsinline=1" title="Aaj Pakistan segment: young Pakistani students shine in robotics" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
   });
+}
+
+// Videos section. Add a video here: ['YouTube video ID', 'Title shown under it']
+const VIDEOS = [
+  ['VUZteS79QHI', 'Video 1'],
+  ['J-6GZFG2uNA', 'Video 2'],
+  ['1bavQE7hKR8', 'Video 3']
+];
+const PLAY = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+$('#vids').innerHTML = VIDEOS.map(([id, t]) => `<figure class="clip vid"><div class="yt"><a class="yt-play" href="https://youtu.be/${id}" target="_blank" rel="noreferrer" aria-label="Play: ${t}"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-btn" aria-hidden="true">${PLAY}</span></a></div><figcaption>${t}</figcaption></figure>`).join('');
+if (/^https?:$/.test(location.protocol)) {
+  document.querySelectorAll('.vid .yt-play').forEach((a, i) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    a.parentNode.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${VIDEOS[i][0]}?autoplay=1&amp;rel=0&amp;playsinline=1" title="${VIDEOS[i][1]}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  }));
 }
 
 // Locked for phone presentations: no pinch zoom, no double-tap zoom, no sideways drag.
