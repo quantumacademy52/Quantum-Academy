@@ -328,18 +328,14 @@ if (/^https?:$/.test(location.protocol)) {
   });
 }
 
-// Videos section. Add a video here: ['YouTube video ID', 'Title shown under it']
-const VIDEOS = [
-  ['VUZteS79QHI', 'Video 1'],
-  ['J-6GZFG2uNA', 'Video 2'],
-  ['1bavQE7hKR8', 'Video 3']
-];
+// Videos section. Add a video: put its YouTube video ID in this list.
+const VIDEOS = ['VUZteS79QHI', 'J-6GZFG2uNA', '1bavQE7hKR8'];
 const PLAY = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-$('#vids').innerHTML = VIDEOS.map(([id, t]) => `<figure class="clip vid"><div class="yt"><a class="yt-play" href="https://youtu.be/${id}" target="_blank" rel="noreferrer" aria-label="Play: ${t}"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-btn" aria-hidden="true">${PLAY}</span></a></div><figcaption>${t}</figcaption></figure>`).join('');
+$('#vids').innerHTML = VIDEOS.map((id) => `<figure class="clip vid"><div class="yt"><a class="yt-play" href="https://youtu.be/${id}" target="_blank" rel="noreferrer" aria-label="Play video"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-btn" aria-hidden="true">${PLAY}</span></a></div></figure>`).join('');
 if (/^https?:$/.test(location.protocol)) {
   document.querySelectorAll('.vid .yt-play').forEach((a, i) => a.addEventListener('click', (e) => {
     e.preventDefault();
-    a.parentNode.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${VIDEOS[i][0]}?autoplay=1&amp;rel=0&amp;playsinline=1" title="${VIDEOS[i][1]}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    a.parentNode.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${VIDEOS[i]}?autoplay=1&amp;rel=0&amp;playsinline=1" title="Quantum Academy video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
   }));
 }
 
